@@ -1,0 +1,460 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+/*ffff*/
+
+.formula_bar{
+  width: 100%;
+}
+
+.middle section#checks{
+  font-size: 75%;
+}
+.middle section#checks table{
+  margin: 0 auto;
+}
+.middle section#checks table tr td{
+  width: 7em;
+}
+/*ffff*/
+body {
+    font-size: 100%;
+    font-family: Verdana, Geneva, sans-serif;
+    width: 90%;
+    max-width: 960px;
+    margin: 10px auto;
+    background-color: #333;
+}
+h3{
+text-align: center;
+}
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}#output img{
+    width: 50px;
+    background-color: white;
+}
+#output div{
+    background-color: white;
+    width: 100%;
+    margin-top: 1%;
+}
+header {
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+header img {
+    width: 100%;
+    max-height: 200px;
+}
+content main{
+display: block;
+width: 88.5%;
+max-width: 960px;
+margin-left: auto;
+margin-right: auto;
+}
+nav {
+    height: 50px;
+    background-color: rgb(140, 58, 228);
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+nav ul li {
+    width: 25%;
+    margin-left: 6%;
+    background-color: #bc67c7;
+    display: inline-block;
+    font-weight: 600;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    font-size: 70%;
+}
+.link{
+text-decoration: none;
+color: #000;
+}
+nav ul li:hover {
+    background-color: #7c2dcf;
+    color: whitesmoke;
+    cursor: pointer;
+    font-size: 80%;
+}
+
+main {
+    width: 56.25%;
+    display: inline-block;
+    background-color: #bc67c7;
+    margin-bottom: 15px;
+    padding: 3.90625% 5.625% 3.90625% 5.625%;
+}
+
+article {
+    background-color: #7c2dcf;
+    margin-bottom: 30px;
+}
+
+article img {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+aside {
+    vertical-align: top;
+    margin-left: 1.5%;
+    display: inline-block;
+    background-color: #7b00ff;
+    margin-bottom: 15px;
+    width: 28.7%;
+}
+
+content{
+    background-color: #7c2dcf;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+footer {
+    background-color: #7c2dcf;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+footer p {
+    text-align: left;
+}
+
+footer h3 {
+    text-align: center;
+}
+
+#historyhead{
+height: inherit;
+}
+#historyside{
+width: 20%;
+display: inline-block;
+margin-right: 20px;
+}
+#historyside img{
+    height: 200px;
+    width: 200px;
+    
+    }
+p{
+    padding: 5px;
+}
+aside{
+    padding: 5px;
+}
+
+/*ani*/
+
+/*
+=====
+LEVEL 1. CORE STYLES
+=====
+*/
+
+.toggle{
+    --uiToggleSize: var(--toggleSize, 20px);
+    --uiToggleIndent: var(--toggleIndent, .4em);
+    --uiToggleBorderWidth: var(--toggleBorderWidth, 2px);
+    --uiToggleColor: var(--toggleColor, #000);
+    --uiToggleDisabledColor: var(--toggleDisabledColor, #868e96);
+    --uiToggleBgColor: var(--toggleBgColor, #fff);
+    --uiToggleArrowWidth: var(--toggleArrowWidth, 2px);
+    --uiToggleArrowColor: var(--toggleArrowColor, #fff);
+  
+    display: inline-block;
+    position: relative;
+  }
+  
+  .toggle__input{
+    position: absolute;
+    left: -99999px;
+  }
+  
+  .toggle__label{
+    display: inline-flex;
+    min-height: var(--uiToggleSize);
+    padding-left: calc(var(--uiToggleSize) + var(--uiToggleIndent));
+  }
+  
+  .toggle__input:not(:disabled) ~ .toggle__label{
+    cursor: pointer;
+  }
+  
+  .toggle__label::before, 
+  .toggle__label::after{
+    content: "";
+    box-sizing: border-box;  
+    width: 1em;
+    height: 1em;
+    font-size: var(--uiToggleSize);
+  
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  
+  .toggle__label:before{
+    border: var(--uiToggleBorderWidth) solid var(--uiToggleColor);
+    z-index: 2;
+  }
+  
+  .toggle__input:disabled ~ .toggle__label::before{
+    border-color: var(--uiToggleDisabledColor);
+  }
+  
+  .toggle__input:focus ~ .toggle__label::before{
+    box-shadow: 0 0 0 2px var(--uiToggleBgColor), 0 0 0px 4px var(--uiToggleColor);
+  }
+  
+  .toggle__input:not(:disabled):checked:focus ~ .toggle__label::after{
+    box-shadow: 0 0 0 2px var(--uiToggleBgColor), 0 0 0px 4px var(--uiToggleColor);
+  }
+  
+  .toggle__input:not(:disabled) ~ .toggle__label::after{
+    background-color: var(--uiToggleColor);
+    opacity: 0;
+  }
+  
+  .toggle__input:not(:disabled):checked ~ .toggle__label::after{
+    opacity: 1;
+  }
+  
+  .toggle__text{
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+  
+  /*
+  The arrow size and position depends from sizes of square because I needed an arrow correct positioning from the top left corner of the element toggle
+  */
+  
+  .toggle__text::before{
+    content: "";
+    box-sizing: border-box;
+    width: 0;
+    height: 0;
+    font-size: var(--uiToggleSize);
+  
+    border-left-width: 0;
+    border-bottom-width: 0;
+    border-left-style: solid;
+    border-bottom-style: solid;
+    border-color: var(--uiToggleArrowColor);
+  
+    position: absolute;
+    top: .5428em;
+    left: .2em;
+    z-index: 3;
+  
+    transform-origin: left top;
+    transform: rotate(-40deg) skew(10deg);
+  }
+  
+  .toggle__input:not(:disabled):checked ~ .toggle__label .toggle__text::before{
+    width: .5em;
+    height: .25em;
+    border-left-width: var(--uiToggleArrowWidth);
+    border-bottom-width: var(--uiToggleArrowWidth);
+    will-change: width, height;
+    transition: width .1s ease-out .2s, height .2s ease-out;
+  }
+  
+  /*
+  =====
+  LEVEL 2. PRESENTATION STYLES
+  =====
+  */
+  
+  /* 
+  The demo skin
+  */
+  
+  .toggle__input:disabled ~ .toggle__label{
+    opacity: .24;
+    cursor: not-allowed;
+  }
+  
+  .toggle__label::before, 
+  .toggle__label::after{
+    border-radius: 2px;
+  }
+  
+  /* 
+  The animation of switching states
+  */
+  
+  .toggle__input:not(:disabled) ~ .toggle__label::before,
+  .toggle__input:not(:disabled) ~ .toggle__label::after{
+    opacity: 1;
+    transform-origin: center center;
+    will-change: transform;
+    transition: transform .2s ease-out;
+  }
+  
+  .toggle__input:not(:disabled) ~ .toggle__label::before{
+    transform: rotateY(0deg);
+    transition-delay: .2s;
+  }
+  
+  .toggle__input:not(:disabled) ~ .toggle__label::after{
+    transform: rotateY(90deg);
+  }
+  
+  .toggle__input:not(:disabled):checked ~ .toggle__label::before{
+    transform: rotateY(-90deg);
+    transition-delay: 0s;
+  }
+  
+  .toggle__input:not(:disabled):checked ~ .toggle__label::after{
+    transform: rotateY(0deg);
+    transition-delay: .2s;
+  }
+  
+  .toggle__text::before{
+    opacity: 0;
+  }
+  
+  .toggle__input:not(:disabled):checked ~ .toggle__label .toggle__text::before{
+    opacity: 1;
+    transition: opacity .1s ease-out .3s, width .1s ease-out .5s, height .2s ease-out .3s;
+  }
+  
+  /*
+  =====
+  LEVEL 3. SETTINGS
+  =====
+  */
+  
+  .toggle{
+    --toggleColor: #690e90;
+    --toggleBgColor: #9b59b6;
+    --toggleSize: 35px;
+  }
+  section#checks{
+      display: flex;
+      width: 88.5%;
+      box-sizing: border-box;
+      flex-wrap: wrap;
+      flex-direction: row;
+      margin: 0 auto;
+  }
+  .submit{
+      background-color: #690e90;
+      color: white;
+      border: solid #9b59b6;
+      padding: 10px;
+      font-size: var(--uiToggleSize);
+      margin: 0 auto;
+      display: block;
+  }
+  
+  /*
+  =====
+  DEMO
+  =====
+  */
+  
+  
+  .page{
+    margin: auto;  
+    padding-left: 10px;
+    padding-right: 10px;
+    order: 1;
+  }
+  
+  .page__toggle{
+    display: inline-block;
+    flex-basis: 31.25%;
+    font-weight: 700;
+    color: #333;
+    background-color: white;
+    border: 1px solid  #333;
+    margin-left: 7.5px;
+    margin-right: 7.5px;
+    /*width: 31.25%;*/
+    min-width: 100px;
+  }
+  @media all and (max-width: 1040px) {
+    .page__toggle{
+
+      flex-basis: 31%;
+  }
+}
+  @media all and (max-width: 950px) {
+    .page__toggle{
+
+      flex-basis: 30%;
+  }
+}
+  @media all and (max-width: 826px) {
+    .page__toggle{
+
+      flex-basis: 29%;
+  }
+}
+
+@media all and (max-width: 768px) {
+    main {
+        width: 89%;
+    }
+    aside {
+        width: 100%;
+        margin-left: 0;
+    }
+nav{
+        width: 100%;
+padding-top: 5%;
+padding-bottom: 5%;
+height: inherit;}
+    nav ul li {
+width: 90%;
+margin-left: 5%;
+margin-right: 5%;
+        display: inline-block;
+margin-top: 2.5%;
+margin-bottom: 2.5%;
+        font-weight: 600;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+    }
+    nav ul li:hover {
+        background-color: #e79bf7;
+        color: whitesmoke;
+        cursor: pointer;
+    }
+    footer{
+    height: inherit;
+    }
+    content{
+        height: inherit;
+    }
+}
+
+@media all and (max-width: 641px) {
+  .page__toggle{
+
+    flex-basis: 28.5%;
+}
+}
+@media all and (max-width: 500px) {
+  .page__toggle{
+
+    flex-basis: 44%;
+}
+}

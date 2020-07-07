@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <title>Darts</title>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <img src="assets/img/banner.png">
+        </header>
+        <nav>
+            <ul>
+                <A class="link" href="index.html">
+                    <li>
+                        LAATSTE NIEUWS
+                    </li>
+                </a>
+                <A class="link" href="history.html">
+                    <li>
+                        GESCHIEDENIS
+                    </li>
+                </A>
+                <A class="link" href="speluitleg.html">
+                    <li>
+                        SPELUITILEG
+                    </li>
+                </A>
+            </ul>
+        </nav>
+        <div class='middle'>
+            <content>
+                <h3>Formules test titel</h3>
+                <HR>
+                <main>
+                    <article>
+                        <img src="assets/img/header_search.png">
+                    </article>
+                </main>
+                <HR style="margin-top: -15px;">
+
+                <form method="POST">
+                    <!-- make json to scan for all eenheden in all a rrays. if dupes then break and search  for next.  -->
+                        <section id="checks">
+                            
+                        
+
+                    </section>
+                    <br>
+                    <input class='submit' type="button" name="submit" onclick="validate()" value="Submit">
+                </form>
+                <div id='output'>
+
+                </div>
+            </content>
+            <Br>
+            <main>
+                <content>
+                    <h3>Nentjes wint flawless op vierde dag PDC Home Tour</h3>
+                    <HR>
+                    <article>
+                        <img onclick='functie()' src="assets/img/scoregeert.jpg">
+                    </article>
+
+
+                    <HR style="margin-top: -35px;">
+                    <p>Geert Nentjes is als eerste Nederlander doorgedrongen tot de volgende ronde op de PDC Home Tour.
+                        De Flevolander won al zijn drie groepsduels.
+                    </p><br>
+                    <p>
+                        Nentjes ontsnapte in zijn eerste poulewedstrijd aan een nederlaag tegen Mickey Mansell, die een
+                        matchdart miste. Die wedstrijd werd met 5-4 gewonnen, waarna Lisa Ashton en Ross Smith allebei
+                        met 5-3 werden verslagen. Ashton slaagde erin om één duel te winnen op de PDC Home Tour. De
+                        Engelse speelster was met 5-3 te sterk voor Mansell.
+                    </p>
+                </content>
+                <br>
+                <content>
+                    <h3>Chisnall pakt groepswinst op de derde dag van de PDC Home Tour na drie eenvoudige zeges</h3>
+                    <HR>
+                    <article>
+                        <img onclick='functie()' src="assets/img/chisnall.jpg">
+                    </article>
+
+
+                    <HR style="margin-top: -35px;">
+                    <p>Dave Chisnall heeft met drie gemakkelijke zeges de groepswinst gepakt in de derde groep op de PDC
+                        Home Tour. Chizzy stond slechts drie legs af in zijn poulewedstrijden.
+                    </p>
+                    <p><br>
+                        Scott Waites kwam nog het dichtst bij de winst tegen Chisnall. Scotty 2 Hotty snoepte twee legs
+                        af van zijn Engelse landgenoot. Daarna zegevierde de meervoudig major-finalist tegen Jan Dekker
+                        (5-0) en Jonathan Worsley (5-1).
+                    </p>
+                    <p><br>
+                        Waites eindigde als tweede met vier punten door overwinningen op Worsley en Dekker. Worsley won
+                        het onderlinge duel met de Nederlander en pakte een derde plek.
+                    </p>
+                </content>
+                <br>
+                <content>
+                    <h3>Price wint laatste groepsduel maar ziet Woodhouse doorgaan naar tweede ronde</h3>
+                    <HR>
+                    <article>
+                        <img onclick='functie()' src="assets/img/wodhuose.jpg">
+                    </article>
+
+
+                    <HR style="margin-top: -35px;">
+                    <p>Gerwyn Price heeft in zijn laatste groepsduel op de PDC Home Tour gewonnen van Ted Evetts. Het
+                        was echter niet voldoende voor de groepswinst, die naar Luke Woodhouse ging.
+                    </p>
+                    <p><br>
+                        De Welshman verloor in zijn tweede poulewedstrijd van Woodhouse, die een negendarter en een
+                        gemiddelde van bijna 114 gooide. Price won wel zijn overige groepsduels tegen Evetts en
+                        Rowby-John Rodriguez. Woodhouse wist echter al zijn drie partijen te winnen en eindigde bovenaan
+                        in de poule met zes punten.
+                    </p><br>
+                </content>
+
+            </main>
+            <aside>
+                <h3>Speelschema PDC Home Tour</h3>
+
+
+            </aside>
+        </div>
+        <footer>
+            <h3>Footer</h3>
+            <HR>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In cursus sem rutrum, mollis neque id, venenatis
+            lectus. Donec lacinia velit nisl, eu eleifend mi euismod dignissim. Cras viverra eros in dictum tempus. Nam
+            a nunc faucibus, varius risus sit amet, imperdiet ex. Maecenas porta porttitor tincidunt. Class aptent
+            taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas nec posuere nunc, in
+            facilisis nibh. Nam maximus semper rhoncus. Nunc efficitur augue nunc, facilisis elementum eros lacinia et.
+            Nam sed tortor et mi placerat mollis. Mauris lobortis ornare justo a ullamcorper. Praesent ornare eleifend
+            feugiat. In at tellus porttitor, pulvinar dui a, iaculis nisl.
+        </footer>
+    </div>
+
+    <script>
+        function validate() {
+
+            if (request.readyState === 4 && request.status === 200) {
+                var my_JSON_object = JSON.parse(request.responseText);
+            }
+            let eenheden_array = [];
+            //removes  all text
+            output.innerHTML = "";
+            //removes all child divs
+            while (output.lastElementChild) {
+                output.removeChild(output.lastElementChild);
+            }
+            //cheecks which [eenheden] are checked. 
+            var inputElements = document.getElementsByClassName('toggle__input');
+            for (var j = 0; inputElements[j]; j++) {
+                if (inputElements[j].checked) {
+                    let checkedValue = eenheden_array.push(inputElements[j].value);
+                }
+                console.log(eenheden_array);
+            }
+            if (eenheden_array != "") {
+
+                for (var x = 0; x < my_JSON_object.length; x++) {
+                    for (var i = 0; i < my_JSON_object[x].eenheden.length; i++) {
+                        // for (var j = 0; j < eenheden_array.length; j++) { 
+
+                        let checker = (arr, target) => target.every(every => arr.includes(every));
+
+                        if (checker(my_JSON_object[x].eenheden, eenheden_array) == true) {
+
+                            var div = document.createElement("div");//create a new div
+                            div.id = my_JSON_object[x].naam;
+                            div.innerHTML += my_JSON_object[x].naam;
+                            div.innerHTML += "<br>";
+                            //div.innerHTML += my_JSON_object[x].eenheden;
+                            var img = document.createElement("img");
+                            img.src = "assets/img/formulas/" + my_JSON_object[x].image;
+                            var src = document.getElementById("output");
+                            if (!document.getElementById(my_JSON_object[x].naam)) {
+                                src.appendChild(div);
+                                div.appendChild(img);
+                            }
+                        }
+
+                        //}
+
+                    }
+
+                }
+            }
+        }
+        var request = new XMLHttpRequest();
+        request.open("GET", "formulas/formulas.json", true);
+        request.send(null);
+        request.onreadystatechange = function () {
+            if (request.readyState === 4 && request.status === 200) {
+                var my_JSON_object = JSON.parse(request.responseText);
+                let alphabetic_sort = [];
+                var checks = document.getElementById('checks');
+                for (var x = 0; x < my_JSON_object.length; x++) {
+                    my_JSON_object[x].eenheden.forEach(function (eenheid) {
+                        if (alphabetic_sort.includes(eenheid) === false) alphabetic_sort.push(eenheid);
+
+                    }
+                    )
+                };
+                alphabetic_sort.sort((function (a, b) {
+                    if (a.toLowerCase() < b.toLowerCase()) {
+                        return -1;
+                    } else if (a.toLowerCase() > b.toLowerCase()) {
+                        return 1;
+                    } else {
+                        return 0;
+                    }
+                }));
+                console.log(alphabetic_sort);
+                alphabetic_sort.forEach(function (eenheid) {
+                    if (!document.getElementById(eenheid)) {
+                        checks.innerHTML += "<br>";
+                        var check = document.createElement("div");
+                        check.className = "page__toggle";
+                        checks.appendChild(check);
+
+                        var label = document.createElement("label");
+                        label.className = "toggle";
+                        check.appendChild(label);
+
+                        var input = document.createElement("input");
+                        input.className = "toggle__input";
+                        input.type = "checkbox";
+                        input.id = eenheid;
+                        input.value = eenheid;
+                        input.name = eenheid;
+                        label.appendChild(input);
+
+                        var span = document.createElement("span");
+                        span.className = "toggle__label";
+                        label.appendChild(span);
+
+                        var innerspan = document.createElement("span");
+                        innerspan.className = "toggle__text";
+                        innerspan.innerHTML = eenheid;
+                        span.appendChild(innerspan);
+                    }
+                });
+
+
+            }
+            // <input class="toggle__input" type="checkbox" id="rho" value="rho" name="rho">
+            //    <span class="toggle__label">
+            //          <span class="toggle__text">rho</span>
+            //    </span>
+
+
+            //fetches div
+            const output = document.getElementById('output');
+            let eenheden_array = [];
+            //when submit has been pressed
+
+
+        }
+
+    </script>
+</body>
+
+</html>

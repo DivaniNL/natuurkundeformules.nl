@@ -1,0 +1,18 @@
+[{
+    "eenheden": ["v [snelheid]","s [afstand]","t [tijd]"],
+    "naam": "Snelheidsformule",
+    "image":"snelheid.png"
+
+},
+{
+    "eenheden": ["rho [dichtheid]","m [massa]","V [volume]"],
+    "naam": "Dichtheidsformule",
+    "image":"dichtheid.png"
+
+},
+{
+    "eenheden": ["P [vermogen]","E [energie]","t [tijd]"],
+    "naam": "Vermogensformule",
+    "image":"vermogen.png"
+}
+]
